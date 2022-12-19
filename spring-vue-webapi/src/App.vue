@@ -3,15 +3,14 @@
 </template>
 
 <script>
-
-import PizzaApiComponent from './components/PizzaApiComponent.vue'
+import PizzaApiComponent from "./components/PizzaApiComponent.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-  PizzaApiComponent
-  }
-}
+    PizzaApiComponent,
+  },
+};
 </script>
 
 <style>
