@@ -17,8 +17,9 @@ public class PizzaService {
 	@Autowired
 	private PizzaRepo pizzaRepo;
 
-	public void save(Pizza pizza) {
-		pizzaRepo.save(pizza);
+	public Pizza save(Pizza pizza) {
+
+		return pizzaRepo.save(pizza);
 	}
 
 	public List<Pizza> findAll() {
@@ -38,17 +39,17 @@ public class PizzaService {
 	public List<Pizza> findByName(String name) {
 		return pizzaRepo.findByNameContainingIgnoreCase(name);
 	}
-	
+
 	@Transactional
 	public List<Pizza> findAllIngredients() {
 		List<Pizza> pizzas = pizzaRepo.findAll();
-		
+
 		for (Pizza p : pizzas) {
 			Hibernate.initialize(p.getIngredients());
 		}
-		
+
 		return pizzas;
-		
+
 	}
 
 }
