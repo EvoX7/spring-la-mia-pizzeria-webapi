@@ -2,6 +2,8 @@ package org.pizzeria.italy.pojo;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -25,6 +27,7 @@ public class Ingredient {
 	private String name;
 
 	@ManyToMany(mappedBy = "ingredients", cascade = CascadeType.REMOVE)
+	@JsonIgnore
 	private List<Pizza> pizzas;
 	
 

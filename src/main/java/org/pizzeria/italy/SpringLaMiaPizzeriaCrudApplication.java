@@ -251,10 +251,9 @@ public class SpringLaMiaPizzeriaCrudApplication implements CommandLineRunner {
 		userService.save(userUser);
 		userService.save(adminUser);
 		userService.save(userAdminUser);
+		
+		System.err.println("BUILD OK");
 	}
-	
-
-
 	
 	
 

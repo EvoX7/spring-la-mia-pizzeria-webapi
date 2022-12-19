@@ -24,52 +24,45 @@ public class PizzaApiController {
 
 	@GetMapping("/all")
 	public List<Pizza> getAll() {
-		
-		List<Pizza> allPizzas = pizzaService.findAll();
-		return allPizzas ;
-	}
-	
 
-	
-	
-	
-	
-	
-	
-//	@PostMapping("/create")
-//	public Pizza createPizza(@Valid @RequestBody Pizza pizza) {
-//
-//		System.err.println(pizza);
-//
-//		Pizza newPizza = pizzaService.save(pizza);
-//
-//		System.err.println(newPizza);
-//
-//		return newPizza;
-//	}
-//
-//	@PostMapping("/update/{id}")
-//	public Pizza updatePizza(@PathVariable("id") int id, @Valid @RequestBody Pizza pizza) {
-//
-//		Pizza oldPizza = pizzaService.findPizzaById(id).get();
-//		pizza.setIngredients(oldPizza.getIngredients());
-//
-//		Pizza newPizza = pizzaService.save(pizza);
-//
-//		return newPizza;
-//	}
-//
-//	@GetMapping("/delete/{id}")
-//	public boolean deletePizza(@PathVariable("id") int id) {
-//
-//		try {
-//
-//			Pizza pizza = pizzaService.findPizzaById(id).get();
-//			pizzaService.deleteById(id);
-//		} catch (Exception e) {
-//			return false;
-//		}
-//
-//		return true;
-//	}
+		List<Pizza> allPizzas = pizzaService.findAll();
+		return allPizzas;
+	}
+
+	@PostMapping("/create")
+	public Pizza createPizza(@Valid @RequestBody Pizza pizza) {
+
+		System.err.println(pizza);
+
+		Pizza newPizza = pizzaService.save(pizza);
+
+		System.err.println(newPizza);
+
+		return newPizza;
+	}
+
+	@PostMapping("/update/{id}")
+	public Pizza updatePizza(@PathVariable("id") int id, @Valid @RequestBody Pizza pizza) {
+
+		Pizza oldPizza = pizzaService.findPizzaById(id).get();
+		pizza.setIngredients(oldPizza.getIngredients());
+
+		Pizza newPizza = pizzaService.save(pizza);
+
+		return newPizza;
+	}
+
+	@GetMapping("/delete/{id}")
+	public boolean deletePizza(@PathVariable("id") int id) {
+
+		try {
+
+			Pizza pizza = pizzaService.findPizzaById(id).get();
+			pizzaService.deleteById(id);
+		} catch (Exception e) {
+			return false;
+		}
+
+		return true;
+	}
 }

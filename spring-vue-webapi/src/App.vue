@@ -5,6 +5,7 @@
 <script>
 import PizzaApiComponent from "./components/PizzaApiComponent.vue";
 
+
 export default {
   name: "App",
   components: {
@@ -13,7 +14,8 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+@import "~bootstrap/scss/bootstrap.scss";
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

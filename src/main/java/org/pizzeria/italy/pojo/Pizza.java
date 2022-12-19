@@ -2,6 +2,8 @@ package org.pizzeria.italy.pojo;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -36,10 +38,12 @@ public class Pizza {
 	private int price;
 
 	@ManyToOne
+	@JsonIgnore
 	@JoinColumn(name = "promotion_id", nullable = true)
 	private Promotion promotion;
 
 	@ManyToMany
+	@JsonIgnore
 	private List<Ingredient> ingredients;
 
 	public Pizza() {

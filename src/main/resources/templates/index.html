@@ -85,7 +85,7 @@
 						<td th:text="*{price}"></td>
 						<td th:text="*{promotion}">Promotion</td>
 						<td th:text="*{ingredients}">Ingredients</td>
-						<td class="d-flex"><a th:href="@{/pizzas/admin/edit/{id}(id=${pizza.id})}"
+						<td><a th:href="@{/pizzas/admin/edit/{id}(id=${pizza.id})}"
 							class="btn btn-warning fw-bold mx-2">Modify</a> <a
 							th:href="@{/pizzas/admin/delete/{id}(id=${pizza.id})}"
 							class="btn btn-danger fw-bold">Delete</a></td>
